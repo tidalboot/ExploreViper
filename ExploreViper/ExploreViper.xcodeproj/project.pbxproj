@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		23422EF722633165004E302A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23422EF622633165004E302A /* AppDelegate.swift */; };
-		23422EF922633165004E302A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23422EF822633165004E302A /* ViewController.swift */; };
 		23422EFC22633165004E302A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23422EFA22633165004E302A /* Main.storyboard */; };
 		23422EFE22633183004E302A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23422EFD22633183004E302A /* Assets.xcassets */; };
 		23422F0122633183004E302A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23422EFF22633183004E302A /* LaunchScreen.storyboard */; };
@@ -42,7 +41,6 @@
 /* Begin PBXFileReference section */
 		23422EF322633164004E302A /* ExploreViper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExploreViper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23422EF622633165004E302A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		23422EF822633165004E302A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		23422EFB22633165004E302A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		23422EFD22633183004E302A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23422F0022633183004E302A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 			children = (
 				23422F242263341A004E302A /* Modules */,
 				23422EF622633165004E302A /* AppDelegate.swift */,
-				23422EF822633165004E302A /* ViewController.swift */,
 				23422EFA22633165004E302A /* Main.storyboard */,
 				23422EFD22633183004E302A /* Assets.xcassets */,
 				23422EFF22633183004E302A /* LaunchScreen.storyboard */,
@@ -291,7 +288,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				23422F3122633648004E302A /* ExploreVenuesViewController.swift in Sources */,
-				23422EF922633165004E302A /* ViewController.swift in Sources */,
 				23422F2922633602004E302A /* ExploreVenuesModel.swift in Sources */,
 				23422F2F22633637004E302A /* ExploreVenuesInteractor.swift in Sources */,
 				23422F2D2263361F004E302A /* ExploreVenuesPresenter.swift in Sources */,

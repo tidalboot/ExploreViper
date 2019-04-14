@@ -11,10 +11,27 @@ import UIKit
 
 class ExploreVenuesViewController: UIViewController {
     
+    var presenter: ViewToPresenterProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     
+}
+
+extension ExploreVenuesViewController: PresenterToViewProtocol {
+    
+    func loadVenues(venues: [Venue]) {
+        
+    }
+    
+    func noVenues() {
+
+    }
+    
+    func showError() {
+        
+    }
 }

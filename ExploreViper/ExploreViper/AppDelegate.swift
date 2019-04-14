@@ -16,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let exploreVenues = ExploreVenuesRouter.createModule()
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = exploreVenues
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

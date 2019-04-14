@@ -7,3 +7,29 @@
 //
 
 import Foundation
+
+class ExploreVenuesPresenter: ViewToPresenterProtocol {
+    
+    var view: PresenterToViewProtocol?
+    var interactor: PresenterToInteractorProtocol?
+    var router: PresenterToRouterProtocol?
+    
+    func showVenues(text: String) {
+        self.interactor?.fetchVenues(searchString: text)
+    }
+}
+
+extension ExploreVenuesPresenter: InteractorToPresenterProtocol {
+    
+    func venuesFetched(venues: [Venue]) {
+        self.view?.loadVenues(venues: venues);
+    }
+    
+    func noVenuesFetched() {
+        self.view?.noVenues()
+    }
+    
+    func venuesFetchingFailed() {
+        self.view?.showError()
+    }
+}

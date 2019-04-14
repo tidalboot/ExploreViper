@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+class ExploreVenuesInteractor: PresenterToInteractorProtocol {
+    
+    var presenter: InteractorToPresenterProtocol?
+    
+    func fetchVenues(searchString: String) {
+        
+    }
+}
