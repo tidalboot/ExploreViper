@@ -9,19 +9,27 @@
 import Foundation
 import UIKit
 
-class ExploreVenuesViewController: UIViewController {
+class ExploreVenuesViewController: UIViewController, PresenterToViewProtocol, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
     var presenter: ViewToPresenterProtocol?
     
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var venues : [Venue] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.searchBar.delegate = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
+        // stops creating empty rows
+        self.tableView.tableFooterView = UIView.init(frame: CGRect.zero)
     }
     
-    
-}
-
-extension ExploreVenuesViewController: PresenterToViewProtocol {
+    // MARK: PresenterToViewProtocol methods
     
     func loadVenues(venues: [Venue]) {
         
@@ -33,5 +41,47 @@ extension ExploreVenuesViewController: PresenterToViewProtocol {
     
     func showError() {
         
+    }
+    
+    // MARK: search bar methods
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let text : String = searchBar.text ?? ""
+        
+        if text.count > 0 {
+            self.presenter?.showVenues(text: text)
+        }
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.searchBar.showsCancelButton = true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.resignFirstResponder()
+    }
+    
+    // MARK: tableView delegate methods
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return venues.count
+    }
+    
+    // MARK: tableView dataSource methods
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell:UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: "SearchResultCellId")
+        
+        if (cell == nil) {
+            cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "SearchResultCellId")
+        }
+        cell!.textLabel?.text = self.venues[indexPath.row].name
+        
+        return cell!
     }
 }
