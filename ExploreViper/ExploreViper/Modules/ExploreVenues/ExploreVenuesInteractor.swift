@@ -43,9 +43,12 @@ class ExploreVenuesInteractor: PresenterToInteractorProtocol {
             return
         }
         
-        // extract the array of venues and transform it to an array of Venue objects
-        let venuesArray = (responseGroups[0] as! [String: Any])["items"] as! Array<[String: Any]>
-        let venues = self.parseVenuesArray(venuesArray: venuesArray)
+        var venues : Array<Venue> = []
+        for group in responseGroups {
+            // extract the array of venues and transform it to an array of Venue objects
+            let venuesArray = (group as! [String: Any])["items"] as! Array<[String: Any]>
+            venues.append(contentsOf: self.parseVenuesArray(venuesArray: venuesArray))
+        }
         
         // pass the Venue objects array to the presenter
         self.presenter?.venuesFetched(venues: venues)
