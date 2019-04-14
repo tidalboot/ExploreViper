@@ -15,4 +15,9 @@ class Venue {
     init() {
         self.name = ""
     }
+    
+    // extract the values we need from the json dictionary
+    init(dictionary: [String: Any]) {
+        self.name = (dictionary["venue"] as! NSDictionary)["name"] as! String
+    }
 }

@@ -32,15 +32,26 @@ class ExploreVenuesViewController: UIViewController, PresenterToViewProtocol, UI
     // MARK: PresenterToViewProtocol methods
     
     func loadVenues(venues: [Venue]) {
-        
+        DispatchQueue.main.async {
+            self.venues = venues
+            self.tableView.reloadData()
+        }
     }
     
     func noVenues() {
-
+        DispatchQueue.main.async {
+            self.venues = []
+            self.tableView.reloadData()
+        }
     }
     
     func showError() {
-        
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Error", message: "Oops! Something went wrong... please check your connection or try again later", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     // MARK: search bar methods
@@ -50,6 +61,7 @@ class ExploreVenuesViewController: UIViewController, PresenterToViewProtocol, UI
         
         if text.count > 0 {
             self.presenter?.showVenues(text: text)
+            self.searchBarCancelButtonClicked(self.searchBar)
         }
     }
     

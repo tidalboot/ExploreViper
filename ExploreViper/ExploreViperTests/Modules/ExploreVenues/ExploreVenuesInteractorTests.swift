@@ -24,4 +24,27 @@ class ExploreVenuesInteractorTests: XCTestCase {
     override func tearDown() {
 
     }
+    
+    func testParseExploreJSONResponse() {
+        let resultsDictionary =
+            ["response":
+                ["groups":
+                    [["items":
+                        [["venue":
+                            ["name": "name1"]
+                            ],
+                         ["venue":
+                            ["name": "name2"]
+                        ]]
+                    ]]
+                ]
+            ]
+        let noResultsDictionary = ["response": ["nothing" : []]]
+        
+        interactor?.parseExploreJSONResponse(responseDictionary: noResultsDictionary as NSDictionary)
+        XCTAssert(mockPresenter?.noVenuesFetchedCalled == 1, "Expect noVenuesFetched called once")
+        
+        interactor?.parseExploreJSONResponse(responseDictionary: resultsDictionary as NSDictionary)
+        XCTAssert(mockPresenter?.venuesFetchedCalled == 1, "Expect venuesFetched called once")
+    }
 }
