@@ -10,25 +10,69 @@ import XCTest
 
 class ExploreViperUITests: XCTestCase {
 
+    var app: XCUIApplication!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
 
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        app = XCUIApplication()
+        app.launch()
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
     }
 
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testSearch() {
+        // tap on the search bar to start editing
+        let searchForVenuesInSearchField = app.searchFields["Search for venues in..."]
+        searchForVenuesInSearchField.tap()
+        
+        let lKey = app/*@START_MENU_TOKEN@*/.keys["L"]/*[[".keyboards.keys[\"L\"]",".keys[\"L\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        let oKey = app/*@START_MENU_TOKEN@*/.keys["o"]/*[[".keyboards.keys[\"o\"]",".keys[\"o\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        let nKey = app.keys["n"]
+        let dKey = app.keys["d"]
+        
+        // type 'London'
+        lKey.tap()
+        oKey.tap()
+        nKey.tap()
+        dKey.tap()
+        oKey.tap()
+        nKey.tap()
+        
+        // tap the 'Search' button
+        let searchButton = app/*@START_MENU_TOKEN@*/.buttons["Search"]/*[[".keyboards.buttons[\"Search\"]",".buttons[\"Search\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        searchButton.tap()
+        
+        let delayExpectationVenuesFetched = expectation(description: "Waiting for venues to be fetched")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            delayExpectationVenuesFetched.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5)
+        XCTAssert(app.tables.staticTexts.count > 0, "expect some venues fetched")
+        
+        // tap on the search bar to start editing again
+        searchForVenuesInSearchField.tap()
+        
+        // continue typing to have 'Londonnnn' i.e. something that produces no results
+        nKey.tap()
+        nKey.tap()
+        nKey.tap()
+        nKey.tap()
+        
+        // tap the 'Search' button
+        searchButton.tap()
+        
+        let delayExpectationNoVenuesFetched = expectation(description: "Waiting for venues fetch to complete")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            delayExpectationNoVenuesFetched.fulfill()
+        }
+        
+        waitForExpectations(timeout: 2)
+        XCTAssert(app.tables.staticTexts.count == 0, "expect no venues fetched")
     }
 
 }
