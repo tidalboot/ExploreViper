@@ -11,7 +11,6 @@
 		23422EFC22633165004E302A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23422EFA22633165004E302A /* Main.storyboard */; };
 		23422EFE22633183004E302A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23422EFD22633183004E302A /* Assets.xcassets */; };
 		23422F0122633183004E302A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23422EFF22633183004E302A /* LaunchScreen.storyboard */; };
-		23422F0C22633186004E302A /* ExploreViperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23422F0B22633186004E302A /* ExploreViperTests.swift */; };
 		23422F1722633186004E302A /* ExploreViperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23422F1622633186004E302A /* ExploreViperUITests.swift */; };
 		23422F27226335E5004E302A /* ExploreVenuesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23422F26226335E5004E302A /* ExploreVenuesProtocols.swift */; };
 		23422F2922633602004E302A /* ExploreVenuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23422F2822633602004E302A /* ExploreVenuesModel.swift */; };
@@ -23,6 +22,9 @@
 		23422F4322635BE4004E302A /* MockExploreVenuesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23422F4222635BE4004E302A /* MockExploreVenuesPresenter.swift */; };
 		23422F4522635C2C004E302A /* MockExploreVenuesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23422F4422635C2C004E302A /* MockExploreVenuesRouter.swift */; };
 		23422F4722635C49004E302A /* MockExploreVenuesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23422F4622635C49004E302A /* MockExploreVenuesInteractor.swift */; };
+		23422F4922635D34004E302A /* ExploreVenuesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23422F4822635D34004E302A /* ExploreVenuesViewControllerTests.swift */; };
+		23422F4B22635E83004E302A /* ExploreVenuesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23422F4A22635E83004E302A /* ExploreVenuesPresenterTests.swift */; };
+		23422F4D2263644C004E302A /* ExploreVenuesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23422F4C2263644C004E302A /* ExploreVenuesInteractorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +52,6 @@
 		23422F0022633183004E302A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23422F0222633183004E302A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23422F0722633185004E302A /* ExploreViperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExploreViperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		23422F0B22633186004E302A /* ExploreViperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViperTests.swift; sourceTree = "<group>"; };
 		23422F0D22633186004E302A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23422F1222633186004E302A /* ExploreViperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExploreViperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23422F1622633186004E302A /* ExploreViperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViperUITests.swift; sourceTree = "<group>"; };
@@ -65,6 +66,9 @@
 		23422F4222635BE4004E302A /* MockExploreVenuesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockExploreVenuesPresenter.swift; sourceTree = "<group>"; };
 		23422F4422635C2C004E302A /* MockExploreVenuesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockExploreVenuesRouter.swift; sourceTree = "<group>"; };
 		23422F4622635C49004E302A /* MockExploreVenuesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockExploreVenuesInteractor.swift; sourceTree = "<group>"; };
+		23422F4822635D34004E302A /* ExploreVenuesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVenuesViewControllerTests.swift; sourceTree = "<group>"; };
+		23422F4A22635E83004E302A /* ExploreVenuesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVenuesPresenterTests.swift; sourceTree = "<group>"; };
+		23422F4C2263644C004E302A /* ExploreVenuesInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVenuesInteractorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				23422F4022635BC5004E302A /* Modules */,
-				23422F0B22633186004E302A /* ExploreViperTests.swift */,
 				23422F0D22633186004E302A /* Info.plist */,
 			);
 			path = ExploreViperTests;
@@ -180,6 +183,9 @@
 				23422F4222635BE4004E302A /* MockExploreVenuesPresenter.swift */,
 				23422F4422635C2C004E302A /* MockExploreVenuesRouter.swift */,
 				23422F4622635C49004E302A /* MockExploreVenuesInteractor.swift */,
+				23422F4822635D34004E302A /* ExploreVenuesViewControllerTests.swift */,
+				23422F4A22635E83004E302A /* ExploreVenuesPresenterTests.swift */,
+				23422F4C2263644C004E302A /* ExploreVenuesInteractorTests.swift */,
 			);
 			path = ExploreVenues;
 			sourceTree = "<group>";
@@ -329,10 +335,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23422F4B22635E83004E302A /* ExploreVenuesPresenterTests.swift in Sources */,
 				23422F4522635C2C004E302A /* MockExploreVenuesRouter.swift in Sources */,
 				23422F4322635BE4004E302A /* MockExploreVenuesPresenter.swift in Sources */,
 				23422F3F22635BAD004E302A /* MockExploreVenuesViewController.swift in Sources */,
-				23422F0C22633186004E302A /* ExploreViperTests.swift in Sources */,
+				23422F4D2263644C004E302A /* ExploreVenuesInteractorTests.swift in Sources */,
+				23422F4922635D34004E302A /* ExploreVenuesViewControllerTests.swift in Sources */,
 				23422F4722635C49004E302A /* MockExploreVenuesInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
