@@ -14,6 +14,12 @@
 		23422F0122633183004E302A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23422EFF22633183004E302A /* LaunchScreen.storyboard */; };
 		23422F0C22633186004E302A /* ExploreViperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23422F0B22633186004E302A /* ExploreViperTests.swift */; };
 		23422F1722633186004E302A /* ExploreViperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23422F1622633186004E302A /* ExploreViperUITests.swift */; };
+		23422F27226335E5004E302A /* ExploreVenuesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23422F26226335E5004E302A /* ExploreVenuesProtocols.swift */; };
+		23422F2922633602004E302A /* ExploreVenuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23422F2822633602004E302A /* ExploreVenuesModel.swift */; };
+		23422F2B2263360F004E302A /* ExploreVenuesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23422F2A2263360F004E302A /* ExploreVenuesRouter.swift */; };
+		23422F2D2263361F004E302A /* ExploreVenuesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23422F2C2263361F004E302A /* ExploreVenuesPresenter.swift */; };
+		23422F2F22633637004E302A /* ExploreVenuesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23422F2E22633637004E302A /* ExploreVenuesInteractor.swift */; };
+		23422F3122633648004E302A /* ExploreVenuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23422F3022633648004E302A /* ExploreVenuesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,12 @@
 		23422F1222633186004E302A /* ExploreViperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExploreViperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23422F1622633186004E302A /* ExploreViperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViperUITests.swift; sourceTree = "<group>"; };
 		23422F1822633186004E302A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23422F26226335E5004E302A /* ExploreVenuesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVenuesProtocols.swift; sourceTree = "<group>"; };
+		23422F2822633602004E302A /* ExploreVenuesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVenuesModel.swift; sourceTree = "<group>"; };
+		23422F2A2263360F004E302A /* ExploreVenuesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVenuesRouter.swift; sourceTree = "<group>"; };
+		23422F2C2263361F004E302A /* ExploreVenuesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVenuesPresenter.swift; sourceTree = "<group>"; };
+		23422F2E22633637004E302A /* ExploreVenuesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVenuesInteractor.swift; sourceTree = "<group>"; };
+		23422F3022633648004E302A /* ExploreVenuesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVenuesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +109,7 @@
 		23422EF522633165004E302A /* ExploreViper */ = {
 			isa = PBXGroup;
 			children = (
+				23422F242263341A004E302A /* Modules */,
 				23422EF622633165004E302A /* AppDelegate.swift */,
 				23422EF822633165004E302A /* ViewController.swift */,
 				23422EFA22633165004E302A /* Main.storyboard */,
@@ -123,6 +136,27 @@
 				23422F1822633186004E302A /* Info.plist */,
 			);
 			path = ExploreViperUITests;
+			sourceTree = "<group>";
+		};
+		23422F242263341A004E302A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				23422F2522633441004E302A /* ExploreVenues */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		23422F2522633441004E302A /* ExploreVenues */ = {
+			isa = PBXGroup;
+			children = (
+				23422F26226335E5004E302A /* ExploreVenuesProtocols.swift */,
+				23422F2822633602004E302A /* ExploreVenuesModel.swift */,
+				23422F2A2263360F004E302A /* ExploreVenuesRouter.swift */,
+				23422F2E22633637004E302A /* ExploreVenuesInteractor.swift */,
+				23422F2C2263361F004E302A /* ExploreVenuesPresenter.swift */,
+				23422F3022633648004E302A /* ExploreVenuesViewController.swift */,
+			);
+			path = ExploreVenues;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +290,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23422F3122633648004E302A /* ExploreVenuesViewController.swift in Sources */,
 				23422EF922633165004E302A /* ViewController.swift in Sources */,
+				23422F2922633602004E302A /* ExploreVenuesModel.swift in Sources */,
+				23422F2F22633637004E302A /* ExploreVenuesInteractor.swift in Sources */,
+				23422F2D2263361F004E302A /* ExploreVenuesPresenter.swift in Sources */,
+				23422F2B2263360F004E302A /* ExploreVenuesRouter.swift in Sources */,
 				23422EF722633165004E302A /* AppDelegate.swift in Sources */,
+				23422F27226335E5004E302A /* ExploreVenuesProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
