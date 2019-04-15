@@ -10,19 +10,27 @@ import Foundation
 import UIKit
 
 protocol PresenterToViewProtocol: class {
-    func loadVenues(venues: [Venue])
+    func updateViewModel(with viewModel: ExploreVenuesViewModel)
     func noVenues()
     func showError()
 }
 
+protocol ExploreVenuesViewModel {
+    var numberOfVenues: Int { get }
+    var names: [String] { get }
+}
+
 protocol InteractorToPresenterProtocol: class {
-    func venuesFetched(venues: [Venue])
+    func venuesFetched()
     func noVenuesFetched()
     func venuesFetchingFailed()
 }
 
 protocol PresenterToInteractorProtocol: class {
-    var presenter: InteractorToPresenterProtocol? {get set}
+
+    var viewModel: ExploreVenuesViewModel? { get }
+    var presenter: InteractorToPresenterProtocol? { get set }
+
     func fetchVenues(searchString: String)
 }
 

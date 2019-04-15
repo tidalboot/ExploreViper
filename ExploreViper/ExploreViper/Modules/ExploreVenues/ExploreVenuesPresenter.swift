@@ -21,16 +21,23 @@ class ExploreVenuesPresenter: ViewToPresenterProtocol, InteractorToPresenterProt
     }
     
     // MARK: InteractorToPresenterProtocol methods
-    
-    func venuesFetched(venues: [Venue]) {
-        self.view?.loadVenues(venues: venues);
+    func venuesFetched() {
+
+        guard let viewModel = interactor?.viewModel else {
+            view?.noVenues()
+            return
+        }
+
+        view?.updateViewModel(with: viewModel)
     }
     
     func noVenuesFetched() {
-        self.view?.noVenues()
+
+        view?.noVenues()
     }
     
     func venuesFetchingFailed() {
-        self.view?.showError()
+
+        view?.showError()
     }
 }
